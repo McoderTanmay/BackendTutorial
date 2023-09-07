@@ -4,10 +4,10 @@ app.use(express.json());
 
 const models=require('./models')
 const USER_ROUTER=require('./routes/users')
-// const USER_TRANSACTION=require('./routes/transaction')
+const USER_TRANSACTION=require('./routes/transection')
 
 app.use('/users',USER_ROUTER);
-// app.use('/transaction'.USER_TRANSACTION);
+app.use('/transection',USER_TRANSACTION);
 
 app.use("*", (req, res, next) => {
     console.log('app works')

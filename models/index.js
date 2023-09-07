@@ -1,5 +1,6 @@
 const sequelize=require('sequelize');
 const userModel=require('./user');
+const transectionModel=require('./transection');
 
 exports.db_config =new sequelize(
     'LoginRecords',
@@ -22,3 +23,4 @@ exports.db_config =new sequelize(
 );
 
 exports.userModel = userModel(exports.db_config);
+exports.transectionModel = transectionModel(exports.db_config);

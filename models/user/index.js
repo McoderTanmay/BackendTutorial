@@ -1,9 +1,8 @@
-const {DataTypes}=require('sequelize');
+const {DataTypes, INTEGER}=require('sequelize');
 
 module.exports = (db_config) => {
     const user = db_config.define(
         'user',{
-
             id: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
@@ -20,7 +19,6 @@ module.exports = (db_config) => {
                 type: DataTypes.STRING,
                 allowNull: true,
                 default:null,
-
             },
             dob: {
                 type: DataTypes.STRING,
@@ -34,6 +32,9 @@ module.exports = (db_config) => {
                 type: DataTypes.STRING,
                 allowNull: true
             },
+            total_amount:{
+                type:DataTypes.INTEGER
+            }
     });
     
     return user;
