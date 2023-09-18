@@ -5,9 +5,11 @@ app.use(express.json());
 const models=require('./models')
 const USER_ROUTER=require('./routes/users')
 const USER_TRANSACTION=require('./routes/transection')
+const USER_AUTH=require('./routes/auth')
 
 app.use('/users',USER_ROUTER);
 app.use('/transection',USER_TRANSACTION);
+app.use('/auth',USER_AUTH);
 
 app.use("*", (req, res, next) => {
     console.log('app works')

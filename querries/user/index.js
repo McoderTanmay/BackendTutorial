@@ -1,5 +1,6 @@
 const userModel = require('../../models').userModel;
 
+
 module.exports = {
     async createUser(data) {
         console.log("Data ",data);
@@ -14,5 +15,12 @@ module.exports = {
                 name : name
             }
         });
+    },
+    async getUserById(id){
+        return userModel.findOne({
+            where:{
+                id:id
+            }
+        })
     }
 }
